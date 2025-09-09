@@ -1,38 +1,44 @@
 import 'package:flutter/material.dart';
 
-class ToDoListPage extends StatelessWidget {
-  const ToDoListPage({super.key});
-
+class TodoListPage extends StatelessWidget {
+  const TodoListPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: TextField(
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-              color: Colors.purple
-            ),
-            keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(
-              labelText: 'Preço',
-              hintText: 'exemplo@exemplo.com',
-              //border: InputBorder.none
-              //errorText: ,
-              prefixText: 'R\$ ',
-              suffixText: 'cm',
-              labelStyle: TextStyle(
-                fontSize: 20
-              )
-            ),
-            // obscureText: true,
-            // obscuringCharacter: '*',
-            //keyboardType: TextInputType.number,
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Adicione uma tarefa',
+                    hintText: 'Ex. Comprar pão',
+                  ),
+                ),
+              ),
+              SizedBox(width: 8,),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff00d7f3),
+                  padding: EdgeInsets.all(16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  )
+                ),
+                child: Icon(
+                  Icons.add,
+                  size: 30,
+                  color: Colors.white,
+                ),
+              ),
+            ],
           ),
         ),
-      ),
+      )
     );
   }
 }
