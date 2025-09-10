@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class TodoListPage extends StatelessWidget {
-  const TodoListPage({super.key});
+class ToDoListPage extends StatelessWidget {
+  const ToDoListPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -16,13 +17,13 @@ class TodoListPage extends StatelessWidget {
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(),
                         labelText: 'Adicione uma tarefa',
                         hintText: 'Ex. Comprar pão',
+                        border: OutlineInputBorder(),
                       ),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  SizedBox(width: 16),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
@@ -36,11 +37,10 @@ class TodoListPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 16,),
+              SizedBox(height: 8),
               Row(
                 children: [
                   Expanded(child: Text('Você possui 0 tarefas pendentes')),
-                  SizedBox(width: 8,),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
@@ -50,11 +50,9 @@ class TodoListPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: Expanded(
-                      child: Text(
-                        'Limpar tudo',
-                        style: TextStyle(color: Colors.white),
-                      ),
+                    child: Text(
+                      'Limpar tudo',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ],
